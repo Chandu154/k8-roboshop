@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: shpping
-        image: devarachandrasekhar/shpping:1.0.0
+        image: devarachandrasekhar/shipping:1.0.0
         envFrom:
         - configMapRef:
             name: shpping
