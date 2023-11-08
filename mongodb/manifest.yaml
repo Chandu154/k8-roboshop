@@ -25,6 +25,8 @@ spec:
       - name: mongodb
         image: devarachandrasekhar/mongodb:1.0.0
 ---
+
+## attaching the service 
 apiVersion: v1
 kind: Service
 metadata:
