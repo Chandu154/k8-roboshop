@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: shpping
+  name: shipping
   namespace: roboshop
   labels: # these labels belong to deployment
-    app: shpping
+    app: shipping
     tier: app
     project: roboshop
 
@@ -12,33 +12,33 @@ spec:
   replicas: 1
   selector:
     matchLabels: # these labels should match with pod
-      app: shpping
+      app: shipping
       tier: app
       project: roboshop
   template: # this is the pod definition
     metadata:
       labels:
-        app: shpping
+        app: shipping
         tier: app
         project: roboshop
     spec:
       containers:
-      - name: shpping
+      - name: shipping
         image: devarachandrasekhar/shipping:1.0.0
         envFrom:
         - configMapRef:
-            name: shpping
+            name: shipping
 ---
 
 ## attaching the service 
 apiVersion: v1
 kind: Service
 metadata:
-  name: shpping
+  name: shipping
   namespace: roboshop
 spec:
   selector:
-    app: shpping
+    app: shipping
     tier: app
     project: roboshop
   ports:
@@ -52,7 +52,7 @@ spec:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: shpping
+  name: shipping
   namespace: roboshop
 data:
   CART_ENDPOINT: "cart:8080"
