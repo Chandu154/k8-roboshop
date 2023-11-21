@@ -25,6 +25,13 @@ spec:
       containers:
       - name: catalogue
         image: devarachandrasekhar/catalogue:1.0.0
+        resources:
+          requests:
+            cpu: "50m"
+            memory: "68Mi"
+          limits:
+            cpu: "100m"
+            memory: "128Mi"
         envFrom:
         - configMapRef:
             name: catalogue
@@ -46,6 +53,7 @@ spec:
     protocol: TCP
     port: 8080 # this port belongs to service
     targetPort: 8080 # this port belongs to container       
+
 
 ---
 ## creating the configmap and refering the config map in deployment  insted of directly giving
