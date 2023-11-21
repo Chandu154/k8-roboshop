@@ -178,7 +178,7 @@ spec:
   - name: web-port
     protocol: TCP
     port: 80 # this port belongs to service
-    targetPort: 80 # this port belongs to container 
+    targetPort: 80 # this port belongs to container
 ---
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
